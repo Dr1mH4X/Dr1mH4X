@@ -1,6 +1,4 @@
-## Hi there 👋
-
-### 📊 GitHub Statistics
+## 🛏️ My profile
 
 [![Dr1mH4X's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true&include_all_commits=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
 
