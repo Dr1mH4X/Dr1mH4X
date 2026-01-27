@@ -1,8 +1,16 @@
 ## 🛏️ My profile
 
-[![Dr1mH4X's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true&include_all_commits=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true&theme=radical">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true">
+  <img alt="Dr1mH4X's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true">
+</picture>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true&theme=radical">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true">
+  <img alt="Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true">
+</picture>
 <!--
 **Dr1mH4X/Dr1mH4X** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
