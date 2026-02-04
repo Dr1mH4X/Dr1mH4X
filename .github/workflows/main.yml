@@ -1,34 +1,45 @@
-name: generate animation
+name: Update Profile Assets
 
 on:
   schedule:
     - cron: "0 2 * * *"
-
   workflow_dispatch:
-
   push:
     branches:
       - main
 
-
-
 jobs:
-  generate:
+  update-assets:
     runs-on: self-hosted
+    permissions:
+      contents: write
     timeout-minutes: 10
 
     steps:
-      - name: generate github-contribution-grid-snake.svg
+      - name: Generate Snake Animation
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - name: push github-contribution-grid-snake.svg to the output branch
+
+      - name: Generate GitHub Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.repository_owner }}
+          template: classic
+          base: header, community, repositories, metadata
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          filename: dist/github-metrics.svg
+
+      - name: Push assets to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
+          keep_history: true 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
