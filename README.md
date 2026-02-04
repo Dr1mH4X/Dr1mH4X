@@ -1,15 +1,7 @@
 ## 🛏️ My profile
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true&theme=radical">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true">
-  <img alt="Dr1mH4X's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Dr1mH4X&show_icons=true&hide_border=true">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true&theme=radical">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true">
-  <img alt="Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true">
+<img alt="github-snake" src="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/main/github-metrics.svg" />
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/main/github-contribution-grid-snake-dark.svg" />
