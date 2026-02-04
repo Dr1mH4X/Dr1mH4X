@@ -22,8 +22,8 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: Dr1mH4X
-          template: classic
-          base: header, community, repositories, metadata
+          template: repository
+          base: activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
           plugin_languages: yes
           plugin_languages_sections: most-used
