@@ -9,12 +9,10 @@ on:
       - main
 
 jobs:
-  update-assets:
+  github-metrics:
     runs-on: self-hosted
     permissions:
       contents: write
-    timeout-minutes: 20
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,6 +29,14 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_details: percentage
           filename: github-metrics.svg
+
+  snake-animation:
+    runs-on: self-hosted
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Generate Snake Animation
         uses: Platane/snk/svg-only@v3
