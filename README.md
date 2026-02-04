@@ -12,7 +12,7 @@
   <img alt="Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dr1mH4X&layout=compact&hide_border=true">
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dr1mH4X/你Dr1mH4X/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/output/github-contribution-grid-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/output/github-contribution-grid-snake.svg" />
 </picture>
