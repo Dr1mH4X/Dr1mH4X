@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  update-assets:
+  github-metrics:
     runs-on: self-hosted
     permissions:
       contents: write
@@ -30,6 +30,14 @@ jobs:
           plugin_languages_details: percentage
           filename: github-metrics.svg
 
+  snake-animation:
+    runs-on: self-hosted
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Generate Snake Animation
         uses: Platane/snk/svg-only@v3
         with:
@@ -42,10 +50,11 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          git add .
           git pull origin main --rebase
 
-      - name: Push all assets to main
+      - name: Push Snake assets to main
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update profile assets (metrics & snake)"
-          file_pattern: '*.svg'
+          commit_message: "Update snake animation assets"
+          file_pattern: 'github-contribution-grid-snake*.svg'
