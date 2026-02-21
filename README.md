@@ -1,5 +1,3 @@
-## 🛏️ My profile
-
 <picture>
 <img alt="github-snake" src="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/main/github-metrics.svg" />
 </picture>
