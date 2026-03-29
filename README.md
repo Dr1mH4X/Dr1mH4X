@@ -10,7 +10,7 @@
 <div align="left">
   <p>🥰 Hello, I'm <strong>梦尘</strong></p>
   <p>❤️ Sponsor via
-    <a href="https://ifdian.net/a/dreamhax" target="_blank">AFDIAN
+    <a href="https://ifdian.net/a/dreamhax" target="_blank">IFDIAN
     </a>
   </p>
   <p>
