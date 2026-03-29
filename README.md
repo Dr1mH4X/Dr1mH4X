@@ -10,6 +10,10 @@
 
 <div align="left">
   <p>🥰 Hello, I'm <strong>Ran4x4</strong></p>
+  <p>❤️ Sponsor via
+    <a href="https://ifdian.net/a/dreamhax" target="_blank">AFDIAN
+    </a>
+  </p>
   <p>
     ⚡
     <picture>
