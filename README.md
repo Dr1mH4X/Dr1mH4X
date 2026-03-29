@@ -1,7 +1,6 @@
 <img align="right" width="400" src="https://raw.githubusercontent.com/Dr1mH4X/Dr1mH4X/main/github-metrics.svg" alt="github-metrics" />
 
 <div align="left">
-  <a href="https://github.com/journey-ad/Moe-Counter">
     <img src="https://count.getloli.com/get/@Dr1mH4X?theme=asoul" alt="Moe-Counter" />
   </a>
 </div>
