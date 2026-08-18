@@ -26,7 +26,7 @@ jobs:
       - name: Generate used by assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python used_by/tsclient-rs/scripts/generate_used_by.py --config used_by/tsclient-rs/used-by-repositories.json --output used_by/tsclient-rs
+        run: python used_by/scripts/generate_used_by.py --config used_by/tsclient-rs/used-by-repositories.json --output used_by/tsclient-rs
 
       - name: Commit generated assets
         run: |

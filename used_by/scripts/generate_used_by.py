@@ -15,7 +15,7 @@ SVG_NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", SVG_NS)
 
 COPY = {
-    "heading": "Projects using tsclient-rs",
+    "heading": "Projects using {name}",
     "public": "Public dependents",
     "showing": "Showing",
     "stars": "Total stars",
@@ -311,10 +311,13 @@ def build_repositories(config, token=None):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", default=".github/used-by-repositories.json")
-    parser.add_argument("--output", default="docs/used_by")
+    parser.add_argument("--config", default="used_by/tsclient-rs/used-by-repositories.json")
+    parser.add_argument("--output", default="used_by/tsclient-rs")
     args = parser.parse_args()
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
+    if "name" not in config:
+        raise ValueError("config must contain a 'name' field")
+    COPY["heading"] = COPY["heading"].format(name=config["name"])
     repositories = build_repositories(config, os.environ.get("GITHUB_TOKEN"))
     generate_assets(repositories, config["public_dependents"], Path(args.output))
     print(f"generated {len(repositories)} repository cards into {args.output}")
