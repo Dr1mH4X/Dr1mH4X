@@ -57,3 +57,27 @@ jobs:
         with:
           commit_message: "Update snake animation assets"
           file_pattern: 'snake/github-contribution-grid-snake*.svg'
+
+  used-by-cards:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate used by assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_used_by.py --config used-by-repositories.json --output used_by/tsclient-rs
+
+      - name: Push used by assets to main
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update used by cards"
+          file_pattern: 'used_by/'
