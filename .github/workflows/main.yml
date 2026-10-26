@@ -6,11 +6,15 @@ on:
     branches:
       - main
 
+concurrency:
+  group: profile-assets
+  cancel-in-progress: false
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,11 +31,23 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_details: percentage
           filename: metrics/github-metrics.svg
+          output_action: none
+
+      - name: Collect metrics output
+        run: sudo cp /metrics_renders/metrics/github-metrics.svg metrics/github-metrics.svg
+
+      - name: Upload metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics
+          path: metrics/github-metrics.svg
+          if-no-files-found: error
 
   snake-animation:
+    needs: github-metrics
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,22 +60,18 @@ jobs:
             snake/github-contribution-grid-snake.svg
             snake/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Rebase onto latest main
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git pull --rebase --autostash origin main
-
-      - name: Push Snake assets to main
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Upload snake
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "Update snake animation assets"
-          file_pattern: 'snake/github-contribution-grid-snake*.svg'
+          name: snake
+          path: snake/github-contribution-grid-snake*.svg
+          if-no-files-found: error
 
   used-by-cards:
+    needs: snake-animation
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -74,11 +86,49 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python used_by/scripts/generate_used_by.py --config used_by/tsclient-rs/used-by-repositories.json --output used_by/tsclient-rs
 
-      - name: Rebase onto latest main
-        run: git pull --rebase --autostash origin main
-
-      - name: Push used by assets to main
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Upload used by
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "chore: update used by cards"
-          file_pattern: 'used_by/'
+          name: used-by
+          path: used_by/tsclient-rs
+          if-no-files-found: error
+
+  commit-assets:
+    needs: [github-metrics, snake-animation, used-by-cards]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download metrics
+        uses: actions/download-artifact@v4
+        with:
+          name: metrics
+          path: metrics
+
+      - name: Download snake
+        uses: actions/download-artifact@v4
+        with:
+          name: snake
+          path: snake
+
+      - name: Download used by
+        uses: actions/download-artifact@v4
+        with:
+          name: used-by
+          path: used_by/tsclient-rs
+
+      - name: Commit and push assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics snake used_by
+          if git diff --cached --quiet; then
+            echo "No asset changes"
+            exit 0
+          fi
+          git commit -m "chore: update profile assets"
+          git pull --rebase --autostash origin main
+          git push origin main
