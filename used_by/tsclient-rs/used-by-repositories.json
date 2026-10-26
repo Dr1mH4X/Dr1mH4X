@@ -1,11 +1,16 @@
 {
   "name": "tsclient-rs",
-  "public_dependents": 1,
+  "public_dependents": 2,
   "repositories": [
     {
       "owner": "Dr1mH4X",
       "repo": "TeamSpeakClaw",
       "slug": "Dr1mH4X--TeamSpeakClaw"
+    },
+    {
+      "owner": "Dr1mH4X",
+      "repo": "FlSpeak",
+      "slug": "Dr1mH4X--FlSpeak"
     }
   ]
 }

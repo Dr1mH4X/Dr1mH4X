@@ -3,13 +3,15 @@
     "light",
     "dark"
   ],
-  "repository_count": 1,
-  "public_dependents": 1,
-  "total_stars": 6,
+  "repository_count": 2,
+  "public_dependents": 2,
+  "total_stars": 7,
   "total_forks": 3,
-  "generated_at": "2026-10-19T08:11:05",
-  "svg_count": 6,
+  "generated_at": "2026-10-26T22:34:55",
+  "svg_count": 8,
   "files": [
+    "cards/Dr1mH4X--FlSpeak-dark.svg",
+    "cards/Dr1mH4X--FlSpeak-light.svg",
     "cards/Dr1mH4X--TeamSpeakClaw-dark.svg",
     "cards/Dr1mH4X--TeamSpeakClaw-light.svg",
     "showcase-dark.svg",
@@ -22,9 +24,17 @@
       "owner": "Dr1mH4X",
       "repo": "TeamSpeakClaw",
       "slug": "Dr1mH4X--TeamSpeakClaw",
-      "stars": 6,
+      "stars": 7,
       "forks": 3,
-      "pushed_at": "2026-10-19T06:43:48Z"
+      "pushed_at": "2026-10-26T10:06:03Z"
+    },
+    {
+      "owner": "Dr1mH4X",
+      "repo": "FlSpeak",
+      "slug": "Dr1mH4X--FlSpeak",
+      "stars": 0,
+      "forks": 0,
+      "pushed_at": "2026-10-26T14:30:27Z"
     }
   ]
 }

@@ -12,7 +12,7 @@
   <line x1="14" y1="91" x2="266" y2="91" stroke="#30363d"/>
   <g transform="translate(14 105)">
     <path data-icon="star" d="M8 .75l2.16 4.37 4.82.7-3.49 3.4.82 4.8L8 11.75l-4.31 2.27.82-4.8-3.49-3.4 4.82-.7L8 .75z" fill="#ffb000"/>
-    <text x="22" y="12" class="metric-value">6</text>
+    <text x="22" y="12" class="metric-value">7</text>
   </g>
   <g transform="translate(79 105)">
     <g data-icon="fork" fill="none" stroke="#58a6ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -25,5 +25,5 @@
     <circle cx="6" cy="6" r="5"/>
     <path d="M6 3v3l2 1.5"/>
   </g>
-  <text x="266" y="117" text-anchor="end" class="updated">Oct 19, 2026</text>
+  <text x="266" y="117" text-anchor="end" class="updated">Oct 26, 2026</text>
 </svg>
